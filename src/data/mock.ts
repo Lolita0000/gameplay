@@ -1,7 +1,10 @@
+import { ImageSourcePropType } from 'react-native';
+
 export type Guild = {
   id: string;
   name: string;
-  icon?: string;
+  game: string;
+  image: ImageSourcePropType;
   owner: boolean;
 };
 
@@ -16,66 +19,124 @@ export type AppointmentData = {
 export type MemberData = {
   id: string;
   username: string;
-  avatarUrl: string;
+  avatar: ImageSourcePropType;
   status: 'online' | 'busy';
 };
 
 export const user = {
-  firstName: 'Rodrigo',
-  avatarUrl: 'https://i.pravatar.cc/150?img=12',
+  firstName: 'Tiago',
+  avatar: require('@/assets/images/avatar.png'),
 };
 
-const lendarios: Guild = { id: '1', name: 'Lendários', owner: true };
+const guilds = {
+  lendarios: {
+    id: '1',
+    name: 'Lendários',
+    game: 'League of Legends',
+    image: require('@/assets/images/guild-lol.jpg'),
+    owner: true,
+  },
+  yeahBoy: {
+    id: '2',
+    name: 'Yeah, boy',
+    game: 'Red Dead Redemption 2',
+    image: require('@/assets/images/guild-rdr.jpg'),
+    owner: false,
+  },
+  rumoAoTopo: {
+    id: '3',
+    name: 'Rumo ao topo',
+    game: 'CS:GO',
+    image: require('@/assets/images/guild-csgo.jpg'),
+    owner: true,
+  },
+  boraQueimarTudo: {
+    id: '4',
+    name: 'Bora queimar tudo',
+    game: 'Apex Legends',
+    image: require('@/assets/images/guild-apex.jpg'),
+    owner: true,
+  },
+  valorosos: {
+    id: '5',
+    name: 'Valorosos',
+    game: 'Valorant',
+    image: require('@/assets/images/guild-valorant.jpg'),
+    owner: true,
+  },
+  rolezaoMonstro: {
+    id: '6',
+    name: 'Rolezão Monstro',
+    game: 'GTA V',
+    image: require('@/assets/images/guild-gta.jpg'),
+    owner: false,
+  },
+} satisfies Record<string, Guild>;
 
 export const appointments: AppointmentData[] = [
   {
     id: '1',
-    guild: lendarios,
+    guild: guilds.lendarios,
     category: '1',
-    date: 'Sex 18/06 às 20:40h',
+    date: '18/06 às 21:00h',
     description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10',
   },
   {
     id: '2',
-    guild: { id: '2', name: 'Pro Players', owner: false },
-    category: '2',
-    date: 'Sáb 19/06 às 18:00h',
-    description: 'Quem perder paga a próxima rodada. Sem desculpas de lag!',
+    guild: guilds.yeahBoy,
+    category: '3',
+    date: '23/06 às 19:00h',
+    description: 'Bora explorar o mapa inteiro e fazer todas as missões secundárias',
   },
   {
     id: '3',
-    guild: lendarios,
-    category: '3',
-    date: 'Dom 20/06 às 15:30h',
-    description: 'Partida descompromissada pra relaxar no domingo.',
+    guild: guilds.rumoAoTopo,
+    category: '2',
+    date: '20/06 às 09:00h',
+    description: 'Duelo valendo a vaga no time principal do campeonato',
   },
   {
     id: '4',
-    guild: { id: '3', name: 'Os Invencíveis', owner: false },
-    category: '4',
-    date: 'Seg 21/06 às 21:00h',
-    description: 'Treino de estratégia antes do campeonato.',
+    guild: guilds.boraQueimarTudo,
+    category: '1',
+    date: '20/06 às 14:20h',
+    description: 'Subindo de elo sem medo, só vitória hoje',
   },
   {
     id: '5',
-    guild: lendarios,
-    category: '1',
-    date: 'Qua 23/06 às 20:00h',
-    description: 'Mais uma rumo ao challenger.',
+    guild: guilds.valorosos,
+    category: '3',
+    date: '18/06 às 21:00h',
+    description: 'Partida descompromissada com a galera',
   },
   {
     id: '6',
-    guild: { id: '4', name: 'Squad Noturno', owner: false },
-    category: '3',
-    date: 'Sex 25/06 às 23:00h',
-    description: 'Jogatina da madrugada.',
+    guild: guilds.rolezaoMonstro,
+    category: '4',
+    date: '25/06 às 22:00h',
+    description: 'Treino de pilotagem para as corridas de sexta',
   },
 ];
 
 export const members: MemberData[] = [
-  { id: '1', username: 'Rodrigo', avatarUrl: 'https://i.pravatar.cc/150?img=12', status: 'online' },
-  { id: '2', username: 'Diego', avatarUrl: 'https://i.pravatar.cc/150?img=33', status: 'busy' },
-  { id: '3', username: 'Mayk', avatarUrl: 'https://i.pravatar.cc/150?img=59', status: 'online' },
+  {
+    id: '1',
+    username: 'Tiago Luchtenberg',
+    avatar: require('@/assets/images/member-tiago.jpg'),
+    status: 'online',
+  },
+  {
+    id: '2',
+    username: 'Rodrigo Gonçalves',
+    avatar: require('@/assets/images/member-rodrigo.jpg'),
+    status: 'busy',
+  },
+  {
+    id: '3',
+    username: 'Diego Fernandes',
+    avatar: require('@/assets/images/member-diego.jpg'),
+    status: 'busy',
+  },
 ];
 
-export const selectedGuild = lendarios;
+export const selectedGuild: Guild = guilds.valorosos;
