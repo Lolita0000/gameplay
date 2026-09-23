@@ -10,7 +10,6 @@ type Props = {
   hasCheckBox?: boolean;
 };
 
-// Lista horizontal de categorias. O estado fica na tela (quem usa decide o que fazer).
 export function CategorySelect({ categorySelected, setCategory, hasCheckBox = false }: Props) {
   return (
     <ScrollView

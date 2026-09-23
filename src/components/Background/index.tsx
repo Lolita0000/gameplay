@@ -8,7 +8,6 @@ type Props = {
   children: ReactNode;
 };
 
-// Fundo em degradê usado em todas as telas.
 export function Background({ children }: Props) {
   const { secondary80, secondary100 } = theme.colors;
 

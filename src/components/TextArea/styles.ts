@@ -15,6 +15,6 @@ export const styles = StyleSheet.create({
     fontSize: 13,
     paddingHorizontal: 16,
     paddingTop: 16,
-    textAlignVertical: 'top', // no Android o texto começaria no meio
+    textAlignVertical: 'top',
   },
 });

@@ -10,7 +10,6 @@ export function SignIn() {
   const router = useRouter();
 
   function handleSignIn() {
-    // replace: depois de "logar", o botão voltar não retorna pro login
     router.replace('/home');
   }
 

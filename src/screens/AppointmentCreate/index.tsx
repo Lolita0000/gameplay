@@ -14,7 +14,6 @@ import { selectedGuild } from '@/data/mock';
 import { styles } from './styles';
 
 export function AppointmentCreate() {
-  // Estado da categoria: ao tocar num card, ele fica marcado e os outros apagados
   const [category, setCategory] = useState('');
   const router = useRouter();
   const insets = useSafeAreaInsets();
@@ -36,7 +35,6 @@ export function AppointmentCreate() {
           <CategorySelect hasCheckBox categorySelected={category} setCategory={setCategory} />
 
           <View style={styles.form}>
-            {/* estado "Servidor selecionado" (o modal da lista não faz parte da atividade) */}
             <GuildSelect guild={selectedGuild} />
 
             <View style={styles.field}>

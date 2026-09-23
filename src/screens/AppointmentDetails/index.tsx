@@ -15,7 +15,6 @@ import { theme } from '@/global/styles/theme';
 import { styles } from './styles';
 
 export function AppointmentDetails() {
-  // id vem da rota: /details/1, /details/2...
   const { id } = useLocalSearchParams<{ id: string }>();
   const insets = useSafeAreaInsets();
 

@@ -7,7 +7,6 @@ type Props = {
   uri?: string;
 };
 
-// Ícone do servidor. Sem imagem, mostra o logo do Discord (igual ao app do Discord).
 export function GuildIcon({ uri }: Props) {
   return (
     <View style={styles.container}>

@@ -7,7 +7,6 @@ type Props = TouchableOpacityProps & {
   title: string;
 };
 
-// Botão vermelho com o ícone do Discord à esquerda, separado por uma linha.
 export function ButtonIcon({ title, style, ...rest }: Props) {
   return (
     <TouchableOpacity style={[styles.container, style]} activeOpacity={0.8} {...rest}>

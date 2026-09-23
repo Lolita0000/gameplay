@@ -1,16 +1,14 @@
-// Dados fixos (mock) para montar as telas sem back-end.
-
 export type Guild = {
   id: string;
   name: string;
-  icon?: string; // url da imagem; sem ela mostra o logo do Discord
+  icon?: string;
   owner: boolean;
 };
 
 export type AppointmentData = {
   id: string;
   guild: Guild;
-  category: string; // id da categoria (utils/categories)
+  category: string;
   date: string;
   description: string;
 };
@@ -80,5 +78,4 @@ export const members: MemberData[] = [
   { id: '3', username: 'Mayk', avatarUrl: 'https://i.pravatar.cc/150?img=59', status: 'online' },
 ];
 
-// "Servidor selecionado" usado na tela de Agendar
 export const selectedGuild = lendarios;

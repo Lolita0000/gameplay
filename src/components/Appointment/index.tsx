@@ -12,7 +12,6 @@ type Props = TouchableOpacityProps & {
   data: AppointmentData;
 };
 
-// Item da lista de partidas agendadas.
 export function Appointment({ data, ...rest }: Props) {
   const category = categories.find((item) => item.id === data.category);
   const { owner } = data.guild;

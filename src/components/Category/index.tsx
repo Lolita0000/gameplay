@@ -13,7 +13,6 @@ type Props = TouchableOpacityProps & {
   hasCheckBox?: boolean;
 };
 
-// Card de categoria. Selecionado = opacidade cheia + checkbox vermelho.
 export function Category({
   title,
   icon: Icon,
@@ -25,7 +24,6 @@ export function Category({
 
   return (
     <TouchableOpacity activeOpacity={0.8} {...rest}>
-      {/* gradiente de fora funciona como a borda do card */}
       <LinearGradient style={styles.container} colors={[secondary50, secondary70]}>
         <LinearGradient
           style={[styles.content, { opacity: checked ? 1 : 0.5 }]}

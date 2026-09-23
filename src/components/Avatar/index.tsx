@@ -8,7 +8,6 @@ type Props = {
   urlImage: string;
 };
 
-// Foto com "borda" em degradê (o gradiente fica atrás e a imagem é 3px menor).
 export function Avatar({ urlImage }: Props) {
   const { secondary50, secondary70 } = theme.colors;
 

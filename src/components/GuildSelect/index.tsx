@@ -7,10 +7,9 @@ import { theme } from '@/global/styles/theme';
 import { styles } from './styles';
 
 type Props = TouchableOpacityProps & {
-  guild?: Guild; // sem servidor: mostra o quadrado vazio + "Selecione um servidor"
+  guild?: Guild;
 };
 
-// Campo de seleção de servidor da tela de Agendar.
 export function GuildSelect({ guild, ...rest }: Props) {
   return (
     <TouchableOpacity activeOpacity={0.7} {...rest}>

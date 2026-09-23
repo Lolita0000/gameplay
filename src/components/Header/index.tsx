@@ -10,7 +10,7 @@ import { styles } from './styles';
 
 type Props = {
   title: string;
-  action?: ReactNode; // botão opcional no canto direito (ex.: compartilhar)
+  action?: ReactNode;
 };
 
 export function Header({ title, action }: Props) {
@@ -29,7 +29,6 @@ export function Header({ title, action }: Props) {
 
       <Text style={styles.title}>{title}</Text>
 
-      {/* sem ação, um espaço vazio do mesmo tamanho mantém o título centralizado */}
       {action ? <View>{action}</View> : <View style={styles.placeholder} />}
     </LinearGradient>
   );

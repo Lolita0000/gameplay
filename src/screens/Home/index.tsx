@@ -18,7 +18,6 @@ export function Home() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
 
-  // Clicar de novo na mesma categoria desmarca (volta a mostrar tudo)
   function handleCategorySelect(categoryId: string) {
     setCategory((current) => (current === categoryId ? '' : categoryId));
   }

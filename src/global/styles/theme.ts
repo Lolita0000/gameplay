@@ -1,5 +1,3 @@
-// Cores e fontes tiradas do protótipo do Figma.
-// Centralizar aqui evita "cores mágicas" espalhadas pelos componentes.
 export const theme = {
   colors: {
     primary: '#E51C44',

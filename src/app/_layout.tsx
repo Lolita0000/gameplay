@@ -8,7 +8,6 @@ import { Rajdhani_500Medium, Rajdhani_700Bold } from '@expo-google-fonts/rajdhan
 
 import { theme } from '@/global/styles/theme';
 
-// Segura a splash até as fontes carregarem, pra não "piscar" com a fonte padrão.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {

@@ -25,7 +25,6 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.text500,
     fontSize: 15,
     textAlign: 'center',
-    // compensa a largura do ícone pra o texto ficar centralizado no botão
     marginRight: 56,
   },
 });
