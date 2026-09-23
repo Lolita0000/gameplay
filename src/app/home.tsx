@@ -1,6 +1,3 @@
-import { View } from 'react-native';
+import { Home } from '@/screens/Home';
 
-// placeholder temporário até a Home ficar pronta
-export default function HomeRoute() {
-  return <View />;
-}
+export default Home;
