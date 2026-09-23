@@ -1,6 +1,5 @@
 import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
 import { theme } from '@/global/styles/theme';
 import { styles } from './styles';
 

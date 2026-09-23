@@ -1,5 +1,4 @@
 import { StyleProp, Text, View, ViewStyle } from 'react-native';
-
 import { styles } from './styles';
 
 type Props = {

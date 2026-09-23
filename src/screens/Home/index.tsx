@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { FlatList, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
 import { Appointment } from '@/components/Appointment';
 import { Background } from '@/components/Background';
 import { ButtonAdd } from '@/components/ButtonAdd';

@@ -2,7 +2,6 @@ import { ComponentType } from 'react';
 import { Text, TouchableOpacity, TouchableOpacityProps, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SvgProps } from 'react-native-svg';
-
 import { theme } from '@/global/styles/theme';
 import { styles } from './styles';
 

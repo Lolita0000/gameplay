@@ -4,7 +4,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
 import { theme } from '@/global/styles/theme';
 import { styles } from './styles';
 

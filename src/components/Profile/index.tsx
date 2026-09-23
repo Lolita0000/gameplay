@@ -1,5 +1,4 @@
 import { Text, View } from 'react-native';
-
 import { Avatar } from '@/components/Avatar';
 import { user } from '@/data/mock';
 import { styles } from './styles';

@@ -1,6 +1,5 @@
 import { Text, TouchableOpacity, TouchableOpacityProps, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-
 import { CalendarIcon, PlayerIcon } from '@/assets/icons';
 import { GuildIcon } from '@/components/GuildIcon';
 import { AppointmentData } from '@/data/mock';

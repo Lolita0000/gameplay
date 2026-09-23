@@ -1,6 +1,5 @@
 import { Image, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
-
 import IllustrationImg from '@/assets/images/illustration.png';
 import { Background } from '@/components/Background';
 import { ButtonIcon } from '@/components/ButtonIcon';

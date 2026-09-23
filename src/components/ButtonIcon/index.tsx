@@ -1,5 +1,4 @@
 import { Text, TouchableOpacity, TouchableOpacityProps, View } from 'react-native';
-
 import { DiscordIcon } from '@/assets/icons';
 import { styles } from './styles';
 

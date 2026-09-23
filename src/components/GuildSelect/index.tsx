@@ -1,6 +1,5 @@
 import { Text, TouchableOpacity, TouchableOpacityProps, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-
 import { GuildIcon } from '@/components/GuildIcon';
 import { Guild } from '@/data/mock';
 import { theme } from '@/global/styles/theme';

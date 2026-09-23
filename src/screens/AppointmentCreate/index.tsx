@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
 import { Background } from '@/components/Background';
 import { Button } from '@/components/Button';
 import { CategorySelect } from '@/components/CategorySelect';

@@ -2,7 +2,6 @@ import { FlatList, ImageBackground, Text, TouchableOpacity, View } from 'react-n
 import { Fontisto } from '@expo/vector-icons';
 import { useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
 import BannerImg from '@/assets/images/banner.png';
 import { Background } from '@/components/Background';
 import { ButtonIcon } from '@/components/ButtonIcon';
