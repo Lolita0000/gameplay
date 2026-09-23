@@ -18,9 +18,9 @@ export const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: 'center',
   },
   header: {
+    marginTop: 5,
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -35,6 +35,7 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.text400,
     color: theme.colors.highlight,
     fontSize: 13,
+    marginTop: 3,
     marginRight: 24,
   },
   footer: {

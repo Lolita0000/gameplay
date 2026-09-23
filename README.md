@@ -7,7 +7,7 @@ Telas do protótipo **GamePlay (NLW Together)** em React Native + Expo:
 - Detalhes do servidor
 - Agendar partida (com servidor selecionado e seleção de categoria)
 
-As telas não têm back-end. Os dados vêm de `src/data/mock.ts`, e o que funciona é a navegação e a seleção de categoria.
+As telas não têm back-end. Os dados vêm de `src/data/mock.ts`, as imagens foram exportadas do Figma (`src/assets/images`) e o que funciona é a navegação e a seleção de categoria.
 
 ## Como rodar
 

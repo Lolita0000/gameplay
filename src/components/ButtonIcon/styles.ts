@@ -25,6 +25,5 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.text500,
     fontSize: 15,
     textAlign: 'center',
-    marginRight: 56,
   },
 });

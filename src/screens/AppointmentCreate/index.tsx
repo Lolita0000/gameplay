@@ -14,7 +14,7 @@ import { selectedGuild } from '@/data/mock';
 import { styles } from './styles';
 
 export function AppointmentCreate() {
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState('1');
   const router = useRouter();
   const insets = useSafeAreaInsets();
 
@@ -26,49 +26,51 @@ export function AppointmentCreate() {
       <Background>
         <Header title="Agendar partida" />
 
-        <ScrollView
-          contentContainerStyle={{ paddingBottom: insets.bottom + 56 }}
-          showsVerticalScrollIndicator={false}
-        >
-          <Text style={[styles.label, styles.categoryLabel]}>Categoria</Text>
+        <View style={styles.body}>
+          <ScrollView
+            contentContainerStyle={{ paddingBottom: insets.bottom > 0 ? insets.bottom + 6 : 24 }}
+            showsVerticalScrollIndicator={false}
+          >
+            <Text style={[styles.label, styles.categoryLabel]}>Categoria</Text>
 
-          <CategorySelect hasCheckBox categorySelected={category} setCategory={setCategory} />
+            <CategorySelect hasCheckBox categorySelected={category} setCategory={setCategory} />
 
-          <View style={styles.form}>
-            <GuildSelect guild={selectedGuild} />
+            <View style={styles.form}>
+              <GuildSelect guild={selectedGuild} />
 
-            <View style={styles.field}>
-              <View>
-                <Text style={[styles.label, styles.fieldLabel]}>Dia e mês</Text>
-                <View style={styles.row}>
-                  <SmallInput />
-                  <Text style={styles.divider}>/</Text>
-                  <SmallInput />
+              <View style={styles.field}>
+                <View>
+                  <Text style={[styles.label, styles.fieldLabel]}>Dia e mês</Text>
+                  <View style={styles.row}>
+                    <SmallInput />
+                    <Text style={styles.divider}>/</Text>
+                    <SmallInput />
+                  </View>
+                </View>
+
+                <View style={styles.rightColumn}>
+                  <Text style={[styles.label, styles.fieldLabel]}>Horário</Text>
+                  <View style={styles.row}>
+                    <SmallInput />
+                    <Text style={styles.divider}>:</Text>
+                    <SmallInput />
+                  </View>
                 </View>
               </View>
 
-              <View>
-                <Text style={[styles.label, styles.fieldLabel]}>Hora e minuto</Text>
-                <View style={styles.row}>
-                  <SmallInput />
-                  <Text style={styles.divider}>:</Text>
-                  <SmallInput />
-                </View>
+              <View style={[styles.field, styles.descriptionHeader]}>
+                <Text style={styles.label}>Descrição</Text>
+                <Text style={styles.charLimit}>Max 100 caracteres</Text>
+              </View>
+
+              <TextArea maxLength={100} numberOfLines={5} autoCorrect={false} />
+
+              <View style={styles.footer}>
+                <Button title="Agendar" onPress={() => router.back()} />
               </View>
             </View>
-
-            <View style={[styles.field, styles.descriptionHeader]}>
-              <Text style={styles.label}>Descrição</Text>
-              <Text style={styles.charLimit}>Max 100 caracteres</Text>
-            </View>
-
-            <TextArea maxLength={100} numberOfLines={5} autoCorrect={false} />
-
-            <View style={styles.footer}>
-              <Button title="Agendar" onPress={() => router.back()} />
-            </View>
-          </View>
-        </ScrollView>
+          </ScrollView>
+        </View>
       </Background>
     </KeyboardAvoidingView>
   );

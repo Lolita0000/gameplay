@@ -19,6 +19,8 @@ export const theme = {
     on: '#32BD50',
 
     discord: '#7289DA',
+    highlightBorder: '#3143BC',
+    headerShadow: '#0C123B',
   },
 
   fonts: {

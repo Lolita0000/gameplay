@@ -10,6 +10,7 @@ type Props = TouchableOpacityProps & {
   title: string;
   icon: ComponentType<SvgProps>;
   checked?: boolean;
+  dimmed?: boolean;
   hasCheckBox?: boolean;
 };
 
@@ -17,25 +18,31 @@ export function Category({
   title,
   icon: Icon,
   checked = false,
+  dimmed = false,
   hasCheckBox = false,
   ...rest
 }: Props) {
-  const { secondary40, secondary50, secondary70, secondary85 } = theme.colors;
+  const { secondary40, secondary50, secondary70, secondary85, highlightBorder } = theme.colors;
+  const opacity = dimmed ? 0.5 : 1;
 
   return (
     <TouchableOpacity activeOpacity={0.8} {...rest}>
-      <LinearGradient style={styles.container} colors={[secondary50, secondary70]}>
+      <View style={styles.container}>
         <LinearGradient
-          style={[styles.content, { opacity: checked ? 1 : 0.5 }]}
-          colors={[checked ? secondary85 : secondary50, secondary40]}
+          style={[styles.border, { opacity }]}
+          colors={[checked ? highlightBorder : secondary50, secondary70]}
         >
-          {hasCheckBox && <View style={checked ? styles.checked : styles.check} />}
-
-          <Icon width={48} height={48} />
-
-          <Text style={styles.title}>{title}</Text>
+          <LinearGradient style={styles.background} colors={[secondary85, secondary40]} />
         </LinearGradient>
-      </LinearGradient>
+
+        {hasCheckBox && <View style={checked ? styles.checked : styles.check} />}
+
+        <View style={[styles.icon, { opacity }]}>
+          <Icon width={48} height={48} />
+        </View>
+
+        <Text style={styles.title}>{title}</Text>
+      </View>
     </TouchableOpacity>
   );
 }

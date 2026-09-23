@@ -6,6 +6,9 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  body: {
+    flex: 1,
+  },
   label: {
     fontSize: 18,
     fontFamily: theme.fonts.title700,
@@ -13,34 +16,39 @@ export const styles = StyleSheet.create({
   },
   categoryLabel: {
     marginLeft: 24,
-    marginTop: 36,
-    marginBottom: 18,
+    marginTop: 32,
+    marginBottom: 12,
   },
   form: {
     paddingHorizontal: 24,
-    marginTop: 32,
+    marginTop: 31,
   },
   field: {
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 30,
+    marginTop: 29,
+  },
+  rightColumn: {
+    marginRight: -1,
   },
   fieldLabel: {
-    marginBottom: 12,
+    marginBottom: 14,
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   divider: {
-    marginRight: 4,
+    width: 11,
+    textAlign: 'center',
     fontSize: 15,
     fontFamily: theme.fonts.text500,
     color: theme.colors.highlight,
   },
   descriptionHeader: {
+    marginTop: 26,
     marginBottom: 12,
   },
   charLimit: {
@@ -49,6 +57,6 @@ export const styles = StyleSheet.create({
     color: theme.colors.highlight,
   },
   footer: {
-    marginTop: 20,
+    marginTop: 56,
   },
 });

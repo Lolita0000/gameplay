@@ -7,15 +7,18 @@ export const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
+    gap: 16,
   },
   title: {
     fontFamily: theme.fonts.title700,
     color: theme.colors.heading,
     fontSize: 18,
+    marginTop: -2,
   },
   status: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginTop: 4,
   },
   bulletStatus: {
     width: 8,

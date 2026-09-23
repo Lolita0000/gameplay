@@ -11,12 +11,16 @@ export const styles = StyleSheet.create({
     borderColor: theme.colors.secondary50,
     borderWidth: 1,
     borderRadius: 8,
-    paddingRight: 25,
+    paddingRight: 17,
     overflow: 'hidden',
+  },
+  image: {
+    marginLeft: -1,
   },
   emptyImage: {
     width: 64,
     height: 68,
+    marginLeft: -1,
     backgroundColor: theme.colors.secondary40,
     borderColor: theme.colors.secondary50,
     borderWidth: 1,
@@ -26,9 +30,19 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
+  selectedBody: {
+    flex: 1,
+    marginLeft: 20,
+  },
   label: {
     fontSize: 18,
     fontFamily: theme.fonts.title700,
     color: theme.colors.heading,
+  },
+  subtitle: {
+    fontSize: 13,
+    fontFamily: theme.fonts.text400,
+    color: theme.colors.highlight,
+    marginTop: 4,
   },
 });

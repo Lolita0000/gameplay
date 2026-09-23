@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     paddingHorizontal: 24,
-    marginBottom: 30,
+    marginBottom: 24,
   },
   title: {
     fontSize: 28,
@@ -19,17 +19,22 @@ export const styles = StyleSheet.create({
     color: theme.colors.heading,
   },
   subtitle: {
+    maxWidth: 290,
+    marginTop: 12,
     fontSize: 13,
     lineHeight: 21,
     fontFamily: theme.fonts.text400,
     color: theme.colors.heading,
   },
+  listHeader: {
+    marginTop: 24,
+  },
   members: {
     marginLeft: 24,
-    marginTop: 27,
+    marginTop: 24,
   },
   footer: {
     paddingHorizontal: 24,
-    paddingVertical: 20,
+    paddingTop: 20,
   },
 });

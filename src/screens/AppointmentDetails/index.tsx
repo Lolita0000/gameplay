@@ -41,7 +41,11 @@ export function AppointmentDetails() {
         </View>
       </ImageBackground>
 
-      <ListHeader title="Jogadores" subtitle={`Total ${members.length}`} />
+      <ListHeader
+        title="Jogadores"
+        subtitle={`Total ${members.length}`}
+        style={styles.listHeader}
+      />
 
       <FlatList
         data={members}
@@ -52,7 +56,7 @@ export function AppointmentDetails() {
       />
 
       {owner && (
-        <View style={[styles.footer, { marginBottom: insets.bottom }]}>
+        <View style={[styles.footer, { paddingBottom: insets.bottom > 0 ? insets.bottom + 6 : 24 }]}>
           <ButtonIcon title="Entrar na partida" />
         </View>
       )}

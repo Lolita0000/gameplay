@@ -6,9 +6,11 @@ export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
+    gap: 20,
   },
   user: {
     flexDirection: 'row',
+    marginTop: -1,
   },
   greeting: {
     fontFamily: theme.fonts.title500,
@@ -25,5 +27,6 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.text400,
     fontSize: 13,
     color: theme.colors.highlight,
+    marginTop: 2,
   },
 });

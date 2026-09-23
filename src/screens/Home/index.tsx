@@ -28,7 +28,7 @@ export function Home() {
 
   return (
     <Background>
-      <View style={[styles.header, { marginTop: insets.top + 26 }]}>
+      <View style={[styles.header, { marginTop: insets.top + 12 }]}>
         <Profile />
         <ButtonAdd onPress={() => router.push('/schedule')} />
       </View>

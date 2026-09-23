@@ -16,12 +16,12 @@ type Props = {
 export function Header({ title, action }: Props) {
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const { secondary100, secondary40, heading } = theme.colors;
+  const { secondary85, secondary40, heading, headerShadow } = theme.colors;
 
   return (
     <LinearGradient
-      style={[styles.container, { paddingTop: insets.top + 12 }]}
-      colors={[secondary100, secondary40]}
+      style={[styles.container, { paddingTop: insets.top + 16 }]}
+      colors={[secondary85, secondary40]}
     >
       <TouchableOpacity onPress={() => router.back()} hitSlop={12}>
         <Feather name="arrow-left" size={24} color={heading} />
@@ -30,6 +30,12 @@ export function Header({ title, action }: Props) {
       <Text style={styles.title}>{title}</Text>
 
       {action ? <View>{action}</View> : <View style={styles.placeholder} />}
+
+      <LinearGradient
+        pointerEvents="none"
+        style={styles.shadow}
+        colors={[headerShadow, 'transparent']}
+      />
     </LinearGradient>
   );
 }

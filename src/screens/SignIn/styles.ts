@@ -5,15 +5,16 @@ import { theme } from '@/global/styles/theme';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
   },
   image: {
     width: '100%',
-    height: 360,
+    height: 407,
+    marginTop: 100,
   },
   content: {
-    marginTop: -40,
+    width: '100%',
+    marginTop: -111,
     paddingHorizontal: 50,
   },
   title: {
@@ -21,7 +22,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 40,
     lineHeight: 40,
-    marginBottom: 16,
+    marginBottom: 15,
     fontFamily: theme.fonts.title700,
   },
   subtitle: {
@@ -29,7 +30,7 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 25,
     textAlign: 'center',
-    marginBottom: 64,
-    fontFamily: theme.fonts.title500,
+    marginBottom: 48,
+    fontFamily: theme.fonts.text400,
   },
 });

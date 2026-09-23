@@ -62,21 +62,24 @@ Regra usada: **se aparece em mais de uma tela ou se repete numa lista, vira comp
 
 ### Props que valem explicar
 - **`Header`** recebe `action?: ReactNode`. Em Detalhes passamos o botão de compartilhar, e em Agendar não passamos nada. Quando não tem ação, um `View` vazio de 24px segura o espaço pra o título continuar centralizado.
-- **`ListDivider`** tem `isCentered`. Na Home a linha fica mais perto do item de cima, e em Detalhes fica no meio.
-- **`Category`** tem `hasCheckBox`. Em Agendar aparece o quadradinho, e na Home não.
+- **`ListDivider`** tem `isCentered`. Na Home a linha fica mais perto do item de cima e começa no alinhamento do texto; em Detalhes fica no meio e começa no nome do jogador.
+- **`ListHeader`** aceita `style`, porque o espaço acima dele muda de tela pra tela (40 na Home, 24 em Detalhes).
+- **`Category`** tem `hasCheckBox` e `dimmed`. Em Agendar aparece o quadradinho, e na Home não. `dimmed` deixa o fundo e o ícone com 50% de opacidade quando o card não está selecionado; o título continua forte, igual ao Figma.
+- **`Header`** desenha uma sombra em degradê logo abaixo dele (`position: 'absolute'` + `top: '100%'`), que aparece por cima do banner em Detalhes e do conteúdo em Agendar.
 - Os botões recebem `...rest`, então aceitam qualquer prop do `TouchableOpacity` (como `onPress`) sem precisar declarar uma por uma.
 
 ## 6. Estado da categoria (o ponto principal da tela Agendar)
 
 ```tsx
-const [category, setCategory] = useState('');
+const [category, setCategory] = useState('1');
 <CategorySelect hasCheckBox categorySelected={category} setCategory={setCategory} />
 ```
 
+- A tela começa com "Ranqueada" selecionada, igual ao frame "Agendar - Servidor selecionado" do Figma.
 - O **estado fica na tela**, e o `CategorySelect` só recebe o valor e a função. Isso se chama "levantar o estado" (*lifting state up*): o componente fica reutilizável, e cada tela decide o que fazer com a seleção.
 - Cada `Category` recebe `checked={category.id === categorySelected}`.
-- Visual do card **selecionado**: opacidade 1, gradiente mais escuro e checkbox vermelho.
-- Visual do card **não selecionado**: opacidade 0.5 e checkbox vazio.
+- Visual do card **selecionado**: borda mais clara (`highlightBorder`), fundo e ícone com opacidade cheia e checkbox vermelho.
+- Visual do card **não selecionado**: fundo e ícone com opacidade 0.5 e checkbox vazio.
 - Na **Home** o toque funciona como filtro: tocar de novo na mesma categoria desmarca (`current === id ? '' : id`).
 
 ## 7. Detalhes de estilização que podem perguntar
@@ -89,6 +92,18 @@ const [category, setCategory] = useState('');
 - **`textAlignVertical: 'top'`** no TextArea: no Android o texto começaria no meio da caixa.
 - **`FlatList`** nas listas em vez de `.map`: só renderiza o que está visível, o que é melhor pra listas grandes.
 
-## 8. Dados
+## 8. Dados e imagens
 
 Tudo vem de `src/data/mock.ts`, com tipos TypeScript (`AppointmentData`, `MemberData`, `Guild`). Se um dia tiver API, só troca de onde vêm os dados, e os componentes continuam iguais.
+
+As imagens (foto do perfil, ícones dos servidores, fotos dos jogadores, ilustração do login e banner) foram exportadas do próprio Figma e ficam em `src/assets/images`. Elas são importadas com `require(...)`, então o app funciona sem internet.
+
+## 9. Medidas
+
+Os espaçamentos foram tirados do Figma (tela de 375 x 812). Alguns exemplos que valem saber:
+
+- Header: altura de 60 + a barra de status, título Rajdhani 20.
+- Cards de categoria: 104 x 120, ícone 48 x 48 a 20 do topo, 8 de espaço entre eles.
+- Item da lista: imagem 64 x 68 com borda de 1 em degradê, texto a 20 da imagem.
+- Botões: altura 56, raio 8.
+- O login usa uma posição fixa a partir do topo (a ilustração começa em 100) porque o Figma foi desenhado assim.

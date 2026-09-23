@@ -14,7 +14,7 @@ export function Member({ data }: Props) {
 
   return (
     <View style={styles.container}>
-      <Avatar urlImage={data.avatarUrl} />
+      <Avatar source={data.avatar} />
 
       <View>
         <Text style={styles.title}>{data.username}</Text>

@@ -14,11 +14,24 @@ export function GuildSelect({ guild, ...rest }: Props) {
   return (
     <TouchableOpacity activeOpacity={0.7} {...rest}>
       <View style={styles.container}>
-        {guild ? <GuildIcon uri={guild.icon} /> : <View style={styles.emptyImage} />}
+        {guild ? (
+          <View style={styles.image}>
+            <GuildIcon source={guild.image} />
+          </View>
+        ) : (
+          <View style={styles.emptyImage} />
+        )}
 
-        <View style={styles.body}>
-          <Text style={styles.label}>{guild ? guild.name : 'Selecione um servidor'}</Text>
-        </View>
+        {guild ? (
+          <View style={styles.selectedBody}>
+            <Text style={styles.label}>{guild.name}</Text>
+            <Text style={styles.subtitle}>{guild.game}</Text>
+          </View>
+        ) : (
+          <View style={styles.body}>
+            <Text style={styles.label}>Selecione um servidor</Text>
+          </View>
+        )}
 
         <Feather name="chevron-right" color={theme.colors.heading} size={18} />
       </View>
