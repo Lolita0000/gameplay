@@ -1,4 +1,5 @@
 import { StyleProp, Text, View, ViewStyle } from 'react-native';
+import { globalStyles } from '@/global/styles/global';
 import { styles } from './styles';
 
 type Props = {
@@ -10,8 +11,8 @@ type Props = {
 export function ListHeader({ title, subtitle, style }: Props) {
   return (
     <View style={[styles.container, style]}>
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.subtitle}>{subtitle}</Text>
+      <Text style={globalStyles.title}>{title}</Text>
+      <Text style={globalStyles.caption}>{subtitle}</Text>
     </View>
   );
 }

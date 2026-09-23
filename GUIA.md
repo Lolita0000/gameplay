@@ -38,6 +38,25 @@ Todas as cores e fontes do Figma ficam num só lugar. Nenhum componente usa `'#E
 - Se o design mudar uma cor, você muda em **um lugar só**.
 - Os nomes (`secondary100`, `heading`, `highlight`…) são os mesmos do Figma.
 
+### E o `global.ts`?
+
+Estilos que se repetem em vários componentes ficam em `src/global/styles/global.ts` (`globalStyles`):
+
+| Estilo | O que é | Onde é usado |
+|---|---|---|
+| `title` | Rajdhani 18, cor de título | ListHeader, Appointment, Member, GuildSelect, labels do Agendar |
+| `caption` | Inter 13, cor secundária | ListHeader, Appointment, Member, GuildSelect, Profile, "Max 100 caracteres" |
+| `input` | caixa de campo (fundo, borda, raio, fonte) | SmallInput e TextArea |
+| `button` / `buttonTitle` | botão vermelho de 56 de altura e o texto dele | Button e ButtonIcon |
+
+Cada componente combina o estilo global com o próprio usando um array, e o último do array ganha quando os dois definem a mesma coisa:
+
+```tsx
+<Text style={[globalStyles.caption, styles.category]}>
+```
+
+O `theme.ts` guarda os **valores** (cores e fontes); o `global.ts` guarda **estilos prontos** montados com esses valores. O que só aparece em um componente fica no `styles.ts` dele.
+
 ## 5. Como decidi o que virar componente
 
 Regra usada: **se aparece em mais de uma tela ou se repete numa lista, vira componente.**

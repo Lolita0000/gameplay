@@ -1,6 +1,7 @@
 import { Text, View } from 'react-native';
 import { Avatar } from '@/components/Avatar';
 import { user } from '@/data/mock';
+import { globalStyles } from '@/global/styles/global';
 import { styles } from './styles';
 
 export function Profile() {
@@ -14,7 +15,7 @@ export function Profile() {
           <Text style={styles.username}>{user.firstName}</Text>
         </View>
 
-        <Text style={styles.message}>Hoje é dia de vitória</Text>
+        <Text style={[globalStyles.caption, styles.message]}>Hoje é dia de vitória</Text>
       </View>
     </View>
   );

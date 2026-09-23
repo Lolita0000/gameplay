@@ -5,6 +5,7 @@ import { GuildIcon } from '@/components/GuildIcon';
 import { AppointmentData } from '@/data/mock';
 import { theme } from '@/global/styles/theme';
 import { categories } from '@/utils/categories';
+import { globalStyles } from '@/global/styles/global';
 import { styles } from './styles';
 
 type Props = TouchableOpacityProps & {
@@ -26,8 +27,8 @@ export function Appointment({ data, ...rest }: Props) {
 
         <View style={styles.content}>
           <View style={styles.header}>
-            <Text style={styles.title}>{data.guild.name}</Text>
-            <Text style={styles.category}>{category?.shortTitle}</Text>
+            <Text style={globalStyles.title}>{data.guild.name}</Text>
+            <Text style={[globalStyles.caption, styles.category]}>{category?.shortTitle}</Text>
           </View>
 
           <View style={styles.footer}>

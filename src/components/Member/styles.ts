@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { theme } from '@/global/styles/theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -9,9 +8,6 @@ export const styles = StyleSheet.create({
     gap: 16,
   },
   title: {
-    fontFamily: theme.fonts.title700,
-    color: theme.colors.heading,
-    fontSize: 18,
     marginTop: -2,
   },
   status: {
@@ -24,10 +20,5 @@ export const styles = StyleSheet.create({
     height: 8,
     borderRadius: 4,
     marginRight: 9,
-  },
-  nameStatus: {
-    fontFamily: theme.fonts.text400,
-    color: theme.colors.highlight,
-    fontSize: 13,
   },
 });

@@ -3,6 +3,7 @@ import { Feather } from '@expo/vector-icons';
 import { GuildIcon } from '@/components/GuildIcon';
 import { Guild } from '@/data/mock';
 import { theme } from '@/global/styles/theme';
+import { globalStyles } from '@/global/styles/global';
 import { styles } from './styles';
 
 type Props = TouchableOpacityProps & {
@@ -23,12 +24,12 @@ export function GuildSelect({ guild, ...rest }: Props) {
 
         {guild ? (
           <View style={styles.selectedBody}>
-            <Text style={styles.label}>{guild.name}</Text>
-            <Text style={styles.subtitle}>{guild.game}</Text>
+            <Text style={globalStyles.title}>{guild.name}</Text>
+            <Text style={[globalStyles.caption, styles.subtitle]}>{guild.game}</Text>
           </View>
         ) : (
           <View style={styles.body}>
-            <Text style={styles.label}>Selecione um servidor</Text>
+            <Text style={globalStyles.title}>Selecione um servidor</Text>
           </View>
         )}
 

@@ -10,6 +10,7 @@ import { Header } from '@/components/Header';
 import { SmallInput } from '@/components/SmallInput';
 import { TextArea } from '@/components/TextArea';
 import { selectedGuild } from '@/data/mock';
+import { globalStyles } from '@/global/styles/global';
 import { styles } from './styles';
 
 export function AppointmentCreate() {
@@ -30,7 +31,7 @@ export function AppointmentCreate() {
             contentContainerStyle={{ paddingBottom: insets.bottom > 0 ? insets.bottom + 6 : 24 }}
             showsVerticalScrollIndicator={false}
           >
-            <Text style={[styles.label, styles.categoryLabel]}>Categoria</Text>
+            <Text style={[globalStyles.title, styles.categoryLabel]}>Categoria</Text>
 
             <CategorySelect hasCheckBox categorySelected={category} setCategory={setCategory} />
 
@@ -39,7 +40,7 @@ export function AppointmentCreate() {
 
               <View style={styles.field}>
                 <View>
-                  <Text style={[styles.label, styles.fieldLabel]}>Dia e mês</Text>
+                  <Text style={[globalStyles.title, styles.fieldLabel]}>Dia e mês</Text>
                   <View style={styles.row}>
                     <SmallInput />
                     <Text style={styles.divider}>/</Text>
@@ -48,7 +49,7 @@ export function AppointmentCreate() {
                 </View>
 
                 <View style={styles.rightColumn}>
-                  <Text style={[styles.label, styles.fieldLabel]}>Horário</Text>
+                  <Text style={[globalStyles.title, styles.fieldLabel]}>Horário</Text>
                   <View style={styles.row}>
                     <SmallInput />
                     <Text style={styles.divider}>:</Text>
@@ -58,8 +59,8 @@ export function AppointmentCreate() {
               </View>
 
               <View style={[styles.field, styles.descriptionHeader]}>
-                <Text style={styles.label}>Descrição</Text>
-                <Text style={styles.charLimit}>Max 100 caracteres</Text>
+                <Text style={globalStyles.title}>Descrição</Text>
+                <Text style={globalStyles.caption}>Max 100 caracteres</Text>
               </View>
 
               <TextArea maxLength={100} numberOfLines={5} autoCorrect={false} />

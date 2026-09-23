@@ -8,11 +8,6 @@ export const styles = StyleSheet.create({
   body: {
     flex: 1,
   },
-  label: {
-    fontSize: 18,
-    fontFamily: theme.fonts.title700,
-    color: theme.colors.heading,
-  },
   categoryLabel: {
     marginLeft: 24,
     marginTop: 32,
@@ -49,11 +44,6 @@ export const styles = StyleSheet.create({
   descriptionHeader: {
     marginTop: 26,
     marginBottom: 12,
-  },
-  charLimit: {
-    fontFamily: theme.fonts.text400,
-    fontSize: 13,
-    color: theme.colors.highlight,
   },
   footer: {
     marginTop: 56,
